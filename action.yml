@@ -51,10 +51,7 @@ runs:
               if [ "pnpm" ==  ${{ inputs.packagemanager }} ]; then npm install -g pnpm; pnpm install --frozen-lockfile; pnpm run build; fi
               ln -s dist/index.html dist/404.html
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
-              git config --global user.email "${{ inputs.gitemail }}"
-              git config --global user.name "${{ inputs.gitname }}"
-              git init
-              git add -A
+              git add dist
               git commit -m '${{ inputs.gitmsg }}'
               git subtree push --prefix dist origin gh-pages
         shell: bash
