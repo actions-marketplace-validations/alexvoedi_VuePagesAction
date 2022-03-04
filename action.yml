@@ -49,9 +49,10 @@ runs:
               if [ "npm"  ==  ${{ inputs.packagemanager }} ]; then npm ci; npm run build; fi
               if [ "yarn" ==  ${{ inputs.packagemanager }} ]; then yarn install --frozen-lockfile; yarn build; fi
               if [ "pnpm" ==  ${{ inputs.packagemanager }} ]; then npm install -g pnpm; pnpm install --frozen-lockfile; pnpm run build; fi
-              ln -s dist/index.html dist/404.html
+              cd dist
+              ln -s index.html 404.html
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
-              git add dist
+              git add -A
               git commit -m '${{ inputs.gitmsg }}'
-              git subtree push --prefix dist origin gh-pages
+              git push origin gh-pages
         shell: bash
