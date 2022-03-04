@@ -19,7 +19,7 @@ inputs:
   gitbranch:
     description: 'Your git main branch'
     required: false
-    default: 'main'
+    default: 'origin'
   gitemail:
     description: 'Your git commit email'
     required: false
