@@ -48,7 +48,7 @@ runs:
         run: |
               if [ "npm"  ==  ${{ inputs.packagemanager }} ]; then npm ci; npm run build; fi
               if [ "yarn" ==  ${{ inputs.packagemanager }} ]; then yarn install --frozen-lockfile; yarn build; fi
-              if [ "pnpm" ==  ${{ inputs.packagemanager }} ]; then pnpm install --frozen-lockfile; pnpm run build; fi
+              if [ "pnpm" ==  ${{ inputs.packagemanager }} ]; then npm install -g pnpm; pnpm install --frozen-lockfile; pnpm run build; fi
               cd dist
               ln -s index.html 404.html
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
