@@ -54,5 +54,5 @@ runs:
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
               git add -A
               git commit -m '${{ inputs.gitmsg }}'
-              git push origin gh-pages
+              git push -f https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git ${{ inputs.gitbranch }}:gh-pages
         shell: bash
