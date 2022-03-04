@@ -36,14 +36,14 @@ jobs:
 
 ## Options 🔧
 
-|   Name   |            Description           |     Default    | Required |
-|:--------:|:--------------------------------:|:--------------:|:--------:|
-| username |           Your username          |        -       |     ✅    |
-| reponame |       Your repository name       |        -       |     ✅    |
-|   token  | Please leave this line unchanged |        -       |     ✅    |
-| gitbranch|         Git branch name          | main           |     ❌    |
-| gitemail |         Git commit email         | CI@example.com |     ❌    |
-|  gitname |          Git commit name         |       CI       |     ❌    |
-|  gitmsg  |        Git commit message        |     deploy     |     ❌    |
-|   cname  |           Custom domain          |        -       |     ❌    |
-|  useyarn |         Use yarn to build        |      false     |     ❌    |
+|      Name      |            Description           |     Default    | Required |
+| :------------: | :------------------------------: | :------------: | :------: |
+|    username    |           Your username          |        -       |    yes   |
+|    reponame    |       Your repository name       |        -       |    yes   |
+|      token     | Please leave this line unchanged |        -       |    yes   |
+|    gitbranch   |          Git branch name         |      main      |     -    |
+|    gitemail    |         Git commit email         | CI@example.com |     -    |
+|     gitname    |          Git commit name         |       CI       |     -    |
+|     gitmsg     |        Git commit message        |     deploy     |     -    |
+|      cname     |           Custom domain          |        -       |     -    |
+| packagemanager |     The used packgage manager    |       npm      |     -    |
